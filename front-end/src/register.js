@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useCallback, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -14,6 +15,43 @@ function Register() {
         .then()
     }
 
+=======
+import React, { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+function Register() {
+    const navigate = useNavigate();
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPasword] = useState('')
+    const [confPassword, setConfPassword] = useState('')
+    const [response, setResponse] = useState(null);
+
+    const gotoLogin = () => {
+        navigate("/login");
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://localhost:8081/register', { name, email, password, confPassword })
+            .then((res) => {
+                if(res.data == "jc"){
+                    setResponse("Email já cadastrado.");
+                }
+                else if(res.data == "si"){
+                    setResponse("Senhas não batem.");
+                }
+                else if(res.data == "ok"){
+                    gotoLogin();
+                }
+            })
+    };
+
+>>>>>>> 59767d7 (LoginRegister)
     return (
         <div className='d-flex vh-100 justify-content-center align-items-center bg-primary'>
             <div className='p-3 bg-white w-25 h-auto'>
@@ -34,9 +72,17 @@ function Register() {
                     </div>
                     <div className='mb-3 d-flex align-items-center mb-100'>
                         <i className="bi bi-lock-fill"></i>
+<<<<<<< HEAD
                         <input type="password" placeholder='Confirmar Senha' className='form-control border-0' required></input>
                     </div>
                     <center><button className='btn btn-success w-100 rounded-0'>Cadastrar-se</button></center>
+=======
+                        <input type="password" placeholder='Confirmar Senha' className='form-control border-0' onChange={e => setConfPassword(e.target.value)} required></input>
+                    </div>
+                    <center><a href='/login'>Já possui uma conta? Entrar</a></center>
+                    <p className='text-danger'>{response}</p>
+                    <center><button className='btn btn-success w-100 rounded-0'>Confirmar</button></center>
+>>>>>>> 59767d7 (LoginRegister)
                 </form>
             </div>
         </div>

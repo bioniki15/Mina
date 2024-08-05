@@ -1,15 +1,40 @@
+<<<<<<< HEAD
 import React, { useCallback, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import axios from 'axios'
+=======
+import React, { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+>>>>>>> 59767d7 (LoginRegister)
 
 
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPasword] = useState('')
+<<<<<<< HEAD
     function handleSubmit(event){
         event.preventDefault();
         axios.post('http://localhost:8081/login', {email, password})
+=======
+    const [response, setResponse] = useState('')
+    const navigate = useNavigate()
+
+    function handleSubmit(event){
+        event.preventDefault();
+        axios.post('http://localhost:8081/login', {email, password})
+        .then((res) => {
+            if(res.data == "ok"){
+                navigate("/painel");
+            }
+            else if(res.data == "nb"){
+                setResponse("Email ou senha incorreto/a");
+            }
+        })
+>>>>>>> 59767d7 (LoginRegister)
     }
 
     return (
@@ -26,7 +51,14 @@ function Login() {
                         <i className="bi bi-lock-fill"></i>
                         <input type="password" placeholder='Senha' className='form-control border-0' onChange={e => setPasword(e.target.value)} required></input>
                     </div>
+<<<<<<< HEAD
                     <center><button className='btn btn-success w-100 rounded-0'>Cadastrar-se</button></center>
+=======
+                    <center><a href='/register'>Cadastrar-se</a></center>
+                    <center><a href='/register'>Esqueci a senha</a></center>
+                    <p className='text-danger'>{response}</p>
+                    <center><button className='btn btn-success w-100 rounded-0'>Entrar</button></center>
+>>>>>>> 59767d7 (LoginRegister)
                 </form>
             </div>
         </div>
