@@ -4,6 +4,8 @@ const cors = require('cors');
 
 const app = express();
 
+let userEmail = "";
+
 app.use(express.json());
 app.use(cors());
 const db = mysql.createConnection({
@@ -14,10 +16,10 @@ const db = mysql.createConnection({
 })
 
 app.post('/register', (req, res) => {
-    const name = req.body.name
-    const email = req.body.email
-    const password = req.body.password
-    const confPassword = req.body.confPassword
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password;
+    const confPassword = req.body.confPassword;
     const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 
     db.query("SELECT * FROM USERS WHERE EMAIL = ?", [email], (err, data) => {
@@ -54,6 +56,7 @@ app.post('/login', (req, res) => {
         }
         else if(data.length > 0){
             res.status(201).send("ok");
+            userEmail = email;
             return data
         }
         else{

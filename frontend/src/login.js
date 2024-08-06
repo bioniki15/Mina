@@ -16,7 +16,7 @@ function Login() {
         axios.post('http://localhost:8081/login', {email, password})
         .then((res) => {
             if(res.data == "ok"){
-                navigate("/painel");
+                navigate('/painel', { state: { email } });
             }
             else if(res.data == "nb"){
                 setResponse("Email ou senha incorreto/a");
@@ -25,9 +25,9 @@ function Login() {
     }
 
     return (
-        <div className='d-flex vh-100 justify-content-center align-items-center bg-primary'>
+        <div className='d-flex vh-100 justify-content-center align-items-center bg-primary-subtle'>
             <div className='p-3 bg-white w-25 h-auto'>
-                <center><i className='bi bi-person h1'></i>
+                <center><i className='bi bi-person-fill h1' style={{ color: 'green' }}></i>
                 <h1 className='mb-300'>Login</h1></center>
                 <form onSubmit={handleSubmit}>
                     <div className='mb-3 d-flex align-items-center mb-100'>
