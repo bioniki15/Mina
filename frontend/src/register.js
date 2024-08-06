@@ -36,7 +36,7 @@ function Register() {
 
     return (
         <div className='d-flex vh-100 justify-content-center align-items-center bg-primary-subtle'> 
-            <div className='p-10 bg-white w-25 h-auto m-auto'>
+            <div className='p-3 bg-white w-25 h-auto'>
                 <center><i className='bi bi-person-fill h1' style={{ color: 'green' }}></i>
                     <h1 className='mb-300'>Cadastro</h1></center>
                 <form onSubmit={handleSubmit}>
