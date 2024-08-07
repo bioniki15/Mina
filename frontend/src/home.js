@@ -7,11 +7,11 @@ function Home() {
     const navigate = useNavigate();
 
     const registerAccount = () => {
-        navigate("/register");
+        navigate("/registerDecider");
     };
 
     const loginAccount = () => {
-        navigate("/login");
+        navigate("/loginDecider");
     }
 
 

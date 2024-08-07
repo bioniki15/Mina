@@ -11,31 +11,33 @@ function Login() {
     const [response, setResponse] = useState('')
     const navigate = useNavigate()
 
-    function handleSubmit(event){
+    function handleSubmit(event) {
         event.preventDefault();
-        axios.post('http://localhost:8081/login', {email, password})
-        .then((res) => {
-            if(res.data == "ok"){
-                navigate('/painel', { state: { email } });
-            }
-            else if(res.data == "nb"){
-                setResponse("Email ou senha incorreto/a");
-            }
-        })
+        axios.post('http://localhost:8081/login', { email, password })
+            .then((res) => {
+                if (res.data == "ok") {
+                    navigate('/painel', { state: { email } });
+                }
+                else if (res.data == "nb") {
+                    setResponse("Email ou senha incorreto/a");
+                }
+            })
     }
 
     return (
-        <div className='d-flex vh-100 justify-content-center align-items-center bg-primary-subtle'>
-            <div className='p-3 bg-white w-25 h-auto'>
-                <center><i className='bi bi-person-fill h1' style={{ color: 'green' }}></i>
-                <h1 className='mb-300'>Login</h1></center>
+        <div className='d-flex vh-100 justify-content-center align-items-center bg-success-subtle'>
+            <div className='p-3 bg-white w-25 h-auto mt-300' style={{ boxShadow: '0px 0px 10px' }}>
+                <center><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="green" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+                    <h2 className='mb-500'>Login</h2></center>
                 <form onSubmit={handleSubmit}>
-                    <div className='mb-3 d-flex align-items-center mb-100'>
-                        <i className="bi bi-envelope-at-fill"></i>
+                    <div className='mb-3 d-flex align-items-center mb-100' style={{ borderBottom: '1px solid black' }}>
+                        <i className="bi bi-envelope-at-fill" style={{ paddingRight: '10px', borderRight: '1px solid black' }}></i>
                         <input type="email" placeholder='E-mail' className='form-control border-0' onChange={e => setEmail(e.target.value)} required></input>
                     </div>
-                    <div className='mb-3 d-flex align-items-center mb-100'>
-                        <i className="bi bi-lock-fill"></i>
+                    <div className='mb-3 d-flex align-items-center mb-100' style={{ borderBottom: '1px solid black' }}>
+                        <i className="bi bi-lock-fill" style={{ paddingRight: '10px', borderRight: '1px solid black' }}></i>
                         <input type="password" placeholder='Senha' className='form-control border-0' onChange={e => setPasword(e.target.value)} required></input>
                     </div>
                     <center><a href='/register'>Cadastrar-se</a></center>
@@ -44,7 +46,7 @@ function Login() {
                     <center><button className='btn btn-success w-100 rounded-0'>Entrar</button></center>
                 </form>
             </div>
-        </div>
+        </div >
     )
 }
 

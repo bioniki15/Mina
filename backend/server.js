@@ -20,9 +20,11 @@ app.post('/register', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const confPassword = req.body.confPassword;
+    const user = req.body.user;
+    console.log(user);
     const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 
-    db.query("SELECT * FROM USERS WHERE EMAIL = ?", [email], (err, data) => {
+    db.query("SELECT * FROM users WHERE EMAIL = ?", [email], (err, data) => {
         if (data.length > 0) {
             res.status(201).send("jc");
             return data
@@ -33,6 +35,7 @@ app.post('/register', (req, res) => {
                     res.status(201).send(err)
                     return data
                 }
+
                 res.status(201).send("ok")
                 return data
             })
@@ -50,16 +53,16 @@ app.post('/login', (req, res) => {
 
     const sql = "SELECT * FROM USERS WHERE EMAIL = ? AND PASSWORD = ?";
     db.query(sql, [email, password], (err, data) => {
-        if (err){
+        if (err) {
             res.status(201).send(err);
             return data
         }
-        else if(data.length > 0){
+        else if (data.length > 0) {
             res.status(201).send("ok");
             userEmail = email;
             return data
         }
-        else{
+        else {
             res.status(201).send("nb");
             return data
         }
