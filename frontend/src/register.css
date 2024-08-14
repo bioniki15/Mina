@@ -1,0 +1,51 @@
+.radios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio label {
+    background: #eee;
+    color: black;
+    display: block;
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.inputs {
+    padding-top: 10px;
+    background: white;
+}
+
+.input{
+    box-shadow: 0px 1px 1px black;
+}
+
+.inputs input {
+    background: transparent;
+    margin: 2px;
+}
+
+.inputs input:focus{
+    border-radius: 0;
+    border: none;
+}
+
+
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.radio label:has(input:checked) {
+    background: #198754;
+    color: white;
+}

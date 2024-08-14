@@ -20,7 +20,6 @@ app.post('/register', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const confPassword = req.body.confPassword;
-    const user = req.body.user;
     console.log(user);
     const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 
