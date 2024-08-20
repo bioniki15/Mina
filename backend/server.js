@@ -22,10 +22,23 @@ app.post('/register', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const confPassword = req.body.confPassword;
-    const sql = "INSERT INTO ? (email, name, password) VALUES (?, ?, ?)";
+    let sqlRegister = "";
+    let sqlSearch = ""
+    if (user == "empresa") {
+        sqlRegister = "INSERT INTO empresa (email, name, password) VALUES (?, ?, ?)";
+        sqlSearch = "SELECT * FROM empresa WHERE EMAIL = ?";
+    }
+    else if (user == "coletor"){
+        sqlRegister = "INSERT INTO coletor (email, name, password) VALUES (?, ?, ?)";
+        sqlSearch = "SELECT * FROM coletor WHERE EMAIL = ?";
+    }
+    if (user == "fornecedor"){
+        sqlRegister = "INSERT INTO fornecedor (email, name, password) VALUES (?, ?, ?)";
+        sqlSearch = "SELECT * FROM fornecedor WHERE EMAIL = ?";
+    }
 
-    db.query("SELECT * FROM ? WHERE EMAIL = ?", [user, email], (err, data) => {
-        if(err){
+    db.query(sqlSearch, [email], (err, data) => {
+        if (err) {
             console.log(err)
             res.status(201).send(err);
             return err
@@ -35,7 +48,7 @@ app.post('/register', (req, res) => {
             return data
         }
         else if (password == confPassword) {
-            db.query(sql, [user, email, name, password], (err, data) => {
+            db.query(sqlRegister, [email, name, password], (err, data) => {
                 if (err) {
                     res.status(201).send(err)
                     return data
@@ -53,10 +66,14 @@ app.post('/register', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
+    const user = req.body.user
     const email = req.body.email
     const password = req.body.password
+    let sql = "";
+    if(user == "empresa") sql = 'SELECT * FROM empresa WHERE EMAIL = ? AND PASSWORD = ?'
+    else if(user == "coletor") sql = 'SELECT * FROM coletor WHERE EMAIL = ? AND PASSWORD = ?'
+    else if(user == "fornecedor") sql = 'SELECT * FROM fornecedor WHERE EMAIL = ? AND PASSWORD = ?'
 
-    const sql = "SELECT * FROM USERS WHERE EMAIL = ? AND PASSWORD = ?";
     db.query(sql, [email, password], (err, data) => {
         if (err) {
             res.status(201).send(err);

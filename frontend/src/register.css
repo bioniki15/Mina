@@ -8,7 +8,8 @@
     color: black;
     display: block;
     position: relative;
-    padding: 15px;
+    margin: auto;
+    padding: 15px 25px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;

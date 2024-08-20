@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './register.css';
 
 function Login() {
+    const [user, setUser] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPasword] = useState('')
     const [response, setResponse] = useState('')
@@ -13,7 +14,7 @@ function Login() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.post('http://localhost:8081/login', { email, password })
+        axios.post('http://localhost:8081/login', { user, email, password })
             .then((res) => {
                 if (res.data == "ok") {
                     navigate('/painel', { state: { email } });
@@ -34,13 +35,13 @@ function Login() {
                 <form onSubmit={handleSubmit}>
                     <div className='radios'>
                         <div className='radio' for='empresa'>
-                            <label for='empresa' title='Empresa'><div className='bi bi-building-fill'></div> <input id='empresa' type="radio" name="radio" value='empresa' required></input></label>
+                            <label for='empresa' title='Empresa'><div className='bi bi-building-fill'></div> <input id='empresa' type="radio" name="radio" value='empresa' checked={user === 'empresa'} onChange={e => setUser(e.target.value)} required></input></label>
                         </div>
                         <div className='radio'>
-                            <label for='coletor' title='Coletor'><div className='bi bi-recycle'></div> <input id='coletor' type="radio" name="radio" value='coletor' required></input></label>
+                            <label for='coletor' title='Coletor'><div className='bi bi-recycle'></div> <input id='coletor' type="radio" name="radio" value='coletor' checked={user === 'coletor'} onChange={e => setUser(e.target.value)} required></input></label>
                         </div>
                         <div className='radio'>
-                            <label for='fornecedor' title='Fornecedor'><div className='bi bi-person-fill'></div> <input id='fornecedor' type="radio" name="radio" value='fornecedor' required></input></label>
+                            <label for='fornecedor' title='Fornecedor'><div className='bi bi-person-fill'></div> <input id='fornecedor' type="radio" name="radio" value='fornecedor' checked={user === 'fornecedor'} onChange={e => setUser(e.target.value)} required></input></label>
                         </div>
                     </div>
                     <div className='inputs'>
