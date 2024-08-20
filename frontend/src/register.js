@@ -8,6 +8,7 @@ import './register.css'
 function Register() {
     const navigate = useNavigate();
 
+    const [user, setUser] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPasword] = useState('')
@@ -20,7 +21,7 @@ function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8081/register', { name, email, password, confPassword })
+        axios.post('http://localhost:8081/register', { user, name, email, password, confPassword })
             .then((res) => {
                 if (res.data == "jc") {
                     setResponse("Email já cadastrado.");
@@ -42,13 +43,13 @@ function Register() {
                 <form onSubmit={handleSubmit}>
                     <div className='radios'>
                         <div className='radio' for='empresa'>
-                            <label for='empresa'>Empresa <input id='empresa' type="radio" name="radio" value='empresa' required></input></label>
+                            <label for='empresa' title='Empresa'><div className='bi bi-building-fill'></div> <input id='empresa' type="radio" name="radio" value='empresa' checked={user === 'empresa'} onChange={e => setUser(e.target.value)} required></input></label>
                         </div>
                         <div className='radio'>
-                            <label for='coletor'>Coletor <input id='coletor' type="radio" name="radio" value='coletor' required></input></label>
+                            <label for='coletor' title='Coletor'><div className='bi bi-recycle'></div> <input id='coletor' type="radio" name="radio" value='coletor' checked={user === 'coletor'} onChange={e => setUser(e.target.value)} required></input></label>
                         </div>
                         <div className='radio'>
-                            <label for='fornecedor'>Fornecedor <input id='fornecedor' type="radio" name="radio" value='fornecedor' required></input></label>
+                            <label for='fornecedor' title='Fornecedor'><div className='bi bi-person-fill'></div> <input id='fornecedor' type="radio" name="radio" value='fornecedor' checked={user === 'fornecedor'} onChange={e => setUser(e.target.value)} required></input></label>
                         </div>
                     </div>
                     <div className='formulario'>

@@ -16,20 +16,26 @@ const db = mysql.createConnection({
 })
 
 app.post('/register', (req, res) => {
+    const user = req.body.user;
+    console.log(user)
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
     const confPassword = req.body.confPassword;
-    console.log(user);
-    const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    const sql = "INSERT INTO ? (email, name, password) VALUES (?, ?, ?)";
 
-    db.query("SELECT * FROM users WHERE EMAIL = ?", [email], (err, data) => {
+    db.query("SELECT * FROM ? WHERE EMAIL = ?", [user, email], (err, data) => {
+        if(err){
+            console.log(err)
+            res.status(201).send(err);
+            return err
+        }
         if (data.length > 0) {
             res.status(201).send("jc");
             return data
         }
         else if (password == confPassword) {
-            db.query(sql, [name, email, password], (err, data) => {
+            db.query(sql, [user, email, name, password], (err, data) => {
                 if (err) {
                     res.status(201).send(err)
                     return data

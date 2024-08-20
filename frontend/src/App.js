@@ -10,8 +10,6 @@ import Map from './map';
 import Stock from './stock';
 import Finance from './finance';
 import RankDecider from './rankDecider';
-import LoginDecider from './loginDecider';
-import RegisterDecider from './registerDecider';
 
 
 function App() {
@@ -28,8 +26,6 @@ function App() {
         <Route path="/map" element={<Map />} />
         <Route path="/finance" element={<Finance />} />
         <Route path="/rankDecider" element={<RankDecider />} />
-        <Route path="/loginDecider" element={<LoginDecider />} />
-        <Route path="/registerDecider" element={<RegisterDecider />} />
       </Routes>
     </Router>
   );
