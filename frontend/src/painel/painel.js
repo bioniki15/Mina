@@ -1,8 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useLocation, useNavigate } from 'react-router-dom';
-import logoImage from './images/logo.jpg';
-import "./painel.css"
+import logoImage from '../images/logo.jpg';
 
 function Painel() {
     const location = useLocation();

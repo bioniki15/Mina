@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './rankDecider.css'
 import axios from 'axios';
 
 function RankDecider() {

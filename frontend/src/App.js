@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Register from './register';
-import Login from "./login";
-import Home from "./home";
-import Painel from "./painel";
-import Ranking from './ranking';
-import Material from './material';
-import Map from './map';
+import Register from './register/register';
+import Login from "./login/login";
+import Home from "./home/home";
+import Painel from "./painel/painel";
+import Ranking from './ranking/ranking';
+import Material from './material/material';
+import Map from './map/map';
 import Stock from './stock';
-import Finance from './finance';
-import RankDecider from './rankDecider';
+import Finance from './finance/finance';
+import RankDecider from './ranking/rankDecider';
 
 
 function App() {

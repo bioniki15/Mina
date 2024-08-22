@@ -17,7 +17,6 @@ const db = mysql.createConnection({
 
 app.post('/register', (req, res) => {
     const user = req.body.user;
-    console.log(user)
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
@@ -67,14 +66,15 @@ app.post('/register', (req, res) => {
 
 app.post('/login', (req, res) => {
     const user = req.body.user
+    const name = req.body.name
     const email = req.body.email
     const password = req.body.password
     let sql = "";
-    if(user == "empresa") sql = 'SELECT * FROM empresa WHERE EMAIL = ? AND PASSWORD = ?'
-    else if(user == "coletor") sql = 'SELECT * FROM coletor WHERE EMAIL = ? AND PASSWORD = ?'
-    else if(user == "fornecedor") sql = 'SELECT * FROM fornecedor WHERE EMAIL = ? AND PASSWORD = ?'
+    if(user == "empresa") sql = 'SELECT * FROM empresa WHERE EMAIL = ? AND PASSWORD = ? AND NAME = ?'
+    else if(user == "coletor") sql = 'SELECT * FROM coletor WHERE EMAIL = ? AND PASSWORD = ? AND NAME = ?'
+    else if(user == "fornecedor") sql = 'SELECT * FROM fornecedor WHERE EMAIL = ? AND PASSWORD = ? AND NAME = ?'
 
-    db.query(sql, [email, password], (err, data) => {
+    db.query(sql, [email, password, name], (err, data) => {
         if (err) {
             res.status(201).send(err);
             return data
