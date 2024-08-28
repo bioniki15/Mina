@@ -9,13 +9,12 @@ function Home() {
             <img src={background} alt="Background" className="background" />
             <header className="header">
                 <a href="#" className="logo">Mina De Aço</a>
-
                 <nav>
                     <a href="#" className="active">Home</a>
                     <a href="servicos">Serviços</a>
                     <a href="sobre">Sobre</a>
                     <a href="contato">Contato</a>
-                    <a href='register'>Cadastrar-se</a>
+                    <a href='register'>Iniciar sessão</a>
                 </nav>
             </header>
             <section className="home">

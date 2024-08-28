@@ -10,13 +10,18 @@ import Map from './map/map';
 import Stock from './stock';
 import Finance from './finance/finance';
 import RankDecider from './ranking/rankDecider';
-
+import Servicos from './servicos/servicos';
+import Contato from './contato/contato';
+import Sobre from './sobre/sobre';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/servicos" element={<Servicos />} />
+        <Route path="/contato" element={<Contato />} />
+        <Route path="/sobre" element={<Sobre />} />
         <Route path="/painel" element={<Painel />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
