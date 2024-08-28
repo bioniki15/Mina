@@ -13,7 +13,7 @@ body{
 }
 
 .form{
-    width: 80%;
+    width: auto;
     max-width: 32rem;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) .5rem, white .5rem);
 }
@@ -28,21 +28,21 @@ body{
 
 .form_title{
     font-weight: 300;
-    font-size: 2rem;
-    color: var(--login-primary-color);
+    font-size: 4.5rem;
+    color: ;
     padding-top: 2rem;
     text-align: center;
 }
 
 .form__label{
-    font-size: .8rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: 300;
 }
 
 .form__input{
     padding: .5em 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     border-radius: 0;
     border: none;
     border-bottom: 1px solid var(--login-primary-color);
@@ -68,6 +68,10 @@ body{
     letter-spacing: 1px;
 }
 
+.btn:hover{
+    color: white;
+}
+
 .btn-primary{
     background-color: var(--login-primary-color);
     color: white;
@@ -79,6 +83,7 @@ body{
 
 .form__action{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -98,13 +103,13 @@ body{
 }
 
 .cadastro{
-    font-size: 1.2rem;
+    font-size: 2rem;
     text-align: center;
 }
 
 label .users{
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 0%;
     right: 0%;
     text-align: center;
@@ -121,7 +126,7 @@ label .users{
     color: black;
     display: block;
     position: relative;
-    margin: auto;
+    margin: 10px;
     padding: 15px 25px;
     cursor: pointer;
     font-size: 22px;
@@ -159,7 +164,16 @@ label .users{
     width: 0;
 }
 
+.radio p{
+    font-size: 1.5vh;
+    font-weight: 1000;
+}
+
 .radio label:has(input:checked) {
     background: #198754;
+    color: white;
+}
+
+.radio label:has(input:checked) p{
     color: white;
 }

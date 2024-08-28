@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import background from '../images/background.jpg';
-import './home.css';
+import home from './home.css';
 
 function Home() {
     return (
@@ -15,7 +15,7 @@ function Home() {
                     <a href="servicos">Serviços</a>
                     <a href="sobre">Sobre</a>
                     <a href="contato">Contato</a>
-                    <a href='register'>Cadastrar-se</a>
+                    <a href='register'>Iniciar Sessão</a>
                 </nav>
             </header>
             <section className="home">

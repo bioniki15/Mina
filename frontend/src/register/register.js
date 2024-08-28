@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import "./register.css";
+import "../login/login.css";
 
 
 function Register() {
@@ -43,7 +43,7 @@ function Register() {
                     <legend class="form_title">Cadastre-se</legend>
 
 
-                    <p className='form_title cadastro'>Está se cadastrando como</p>
+                    <p className='form_title cadastro'>Está se cadastrando como?</p>
                     <div className='radios'>
                         <div className='radio mb-3' for='empresa'>
                             <label for='empresa' title='Empresa'><div className='bi bi-building-fill'></div> <input id='empresa' type="radio" name="radio" value='empresa' checked={user === 'empresa'} onChange={e => setUser(e.target.value)} required></input><p className='users'>Empresa</p></label>

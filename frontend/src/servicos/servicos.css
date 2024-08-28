@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-}
-
 img {
     position: absolute;
     left: -0.5%;
@@ -19,26 +10,13 @@ img {
     z-index: -2;
 }
 
-html {
-    font-size: 62.5%;
-}
-
-body {
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    font-size: 2.2vh;
-    font-family: 'Poppins', sans-serif;
-    background-color: black;
-}
-
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background-color: #67ce69;
+    background-color: white;
     filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
@@ -112,7 +90,6 @@ section {
 }
 
 .home {
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,7 +161,7 @@ span {
     padding: 1rem 2.8rem;
     background-color: #67ce69;
     border-radius: 4rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: white;
     letter-spacing: 0.3rem;
     font-weight: 600;
@@ -196,7 +173,7 @@ span {
 .btn:hover {
     transform: scale3d(1.03);
     background-color: #67ce69;
-    color: white;
+    color: black;
     box-shadow: 0 0 25px #67ce69;
 }
 
@@ -278,7 +255,6 @@ span {
     }
 
     .home-content h1 {
-        color: white;
         font-size: 5rem;
     }
 
@@ -286,17 +262,4 @@ span {
         width: 70vw;
         margin-top: 4rem;
     }
-}
-
-h1{
-    font-size: 5vh;
-    color: white;
-}
-
-p {
-    color: gray;
-}
-
-a {
-    text-decoration: none;
 }

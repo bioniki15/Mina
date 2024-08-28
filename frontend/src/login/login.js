@@ -34,7 +34,7 @@ function Login() {
                     <legend class="form_title">Entrar</legend>
 
 
-                    <p className='form_title cadastro'>Está tentando entrar como</p>
+                    <p className='form_title cadastro'>Está tentando entrar como?</p>
                     <div className='radios'>
                         <div className='radio mb-3' for='empresa'>
                             <label for='empresa' title='Empresa'><div className='bi bi-building-fill'></div> <input id='empresa' type="radio" name="radio" value='empresa' checked={user === 'empresa'} onChange={e => setUser(e.target.value)} required></input><p className='users'>Empresa</p></label>

@@ -10,6 +10,7 @@ import Map from './map/map';
 import Stock from './stock';
 import Finance from './finance/finance';
 import RankDecider from './ranking/rankDecider';
+import Servicos from './servicos/servicos';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/map" element={<Map />} />
         <Route path="/finance" element={<Finance />} />
         <Route path="/rankDecider" element={<RankDecider />} />
+        <Route path="/servicos" element={<Servicos />} />
       </Routes>
     </Router>
   );
