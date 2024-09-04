@@ -1,24 +1,15 @@
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from 'react-router-dom';
 import background from '../images/background.jpg';
-import "./servicos.css";
+import Navbar from '../navbar.js';
 
 function Servicos() {
     return (
         <div>
             <img src={background} className="background" />
-            <header>
-                <a href="/" class="logo">Mina De Aço</a>
-
-                <nav>
-                    <a href="/"> Home</a>
-                    <a href="#" class="active">Serviços</a>
-                    <a href="#">Sobre</a>
-                    <a href="#">Contato</a>
-                    <a href="/register">Iniciar Sessão</a>
-                </nav>
-            </header>
+            <Navbar/>
             <section class="home">
                 <div class="home-content">
                     <br></br>
