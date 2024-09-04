@@ -11,7 +11,8 @@ import Stock from './stock';
 import Finance from './finance/finance';
 import RankDecider from './ranking/rankDecider';
 import Servicos from './servicos/servicos';
-
+import Contato from './contato/contato';
+import Sobre from './sobre/sobre';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Route path="/finance" element={<Finance />} />
         <Route path="/rankDecider" element={<RankDecider />} />
         <Route path="/servicos" element={<Servicos />} />
+        <Route path="/contato" element={<Contato />} />
+        <Route path="/sobre" element={<Sobre />} />
       </Routes>
     </Router>
   );
