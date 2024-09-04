@@ -4,6 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import background from '../images/background.jpg';
 import '../global.css';
 import Navbar from '../navbar.js';
+import Footer from '../footer.js';
 
 function Home() {
     return (
@@ -17,7 +18,9 @@ function Home() {
                     <a href="servicos" className="btn">Serviços</a>
                 </div>
             </section>
+            <Footer/>
         </div>
+
     );
 }
 

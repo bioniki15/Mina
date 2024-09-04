@@ -35,7 +35,7 @@ function Register() {
             })
     };
 
-    return (    
+    return (        
         <div>
             <form onSubmit={handleSubmit} autoComplete='off' className='form'>
                 <fieldset class="form_fieldset">

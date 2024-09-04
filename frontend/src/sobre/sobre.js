@@ -1,13 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from 'react-router-dom';
-import background from '../images/background.jpg';
 import Navbar from '../navbar.js';
 
 function Sobre() {
     return (
         <section class="home-sobre">
-            <img src={background} className="background" />
             <Navbar />
             <div class="home-content-sobre">
                 <br></br>

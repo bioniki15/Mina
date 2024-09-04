@@ -8,7 +8,6 @@ import Navbar from '../navbar.js';
 function Servicos() {
     return (
         <div>
-            <img src={background} className="background" />
             <Navbar/>
             <section class="home">
                 <div class="home-content">

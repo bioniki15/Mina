@@ -6,8 +6,7 @@ function Navbar() {
     return (
         <div>
              <header className="header">
-                <a href="#" className="logo">Mina De Aço</a>
-
+                <a href="/" className="logo">Mina De Aço</a>
                 <nav>
                     <a href="/">Home</a>
                     <a href="/servicos">Serviços</a>
