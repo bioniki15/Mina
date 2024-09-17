@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './register/register';
+//import { ToastContainer } from "react-toastify";
+//import "react-toastify/dist/ReactToastify.css";
 import Login from "./login/login";
 import Home from "./home/home";
 import Painel from "./painel/painel";
@@ -13,9 +15,18 @@ import RankDecider from './ranking/rankDecider';
 import Servicos from './servicos/servicos';
 import Sobre from './sobre/sobre';
 import Contato from './contato/contato';
+import { useState } from "react";
+import { auth } from "./services/firebase";
 
 function App() {
+  const [user, setUser] = useState();
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+  });
   return (
+   
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,6 +44,7 @@ function App() {
         <Route path="/contato" element={<Contato />} />
       </Routes>
     </Router>
+    
   );
 }
 
