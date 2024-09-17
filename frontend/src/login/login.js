@@ -14,7 +14,7 @@ function Login() {
       try {
         await signInWithEmailAndPassword(auth, email, password);
         console.log("User logged in Successfully");
-        window.location.href = "/profile";
+        window.location.href = "/home";
         toast.success("User logged in Successfully", {
           position: "top-center",
         });
@@ -55,7 +55,7 @@ function Login() {
                 <input type="password" id="pass" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required class="form__input"></input>
 
                 <div class="form__action">
-                    <button onClick={() => signInGoogle()}>Login com o google</button>
+                    
                     <p className='text-danger text-center'></p>
                     <input type="submit" value="Entrar" class="btn btn-primary"></input>
                     <p class="form__action__aside">Não possui cadastro? <a href="register">Cadastrar-se</a> </p>

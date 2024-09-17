@@ -1,8 +1,8 @@
 import React, { useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './register/register';
-//import { ToastContainer } from "react-toastify";
-//import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Login from "./login/login";
 import Home from "./home/home";
 import Painel from "./painel/painel";
@@ -14,12 +14,9 @@ import Finance from './finance/finance';
 import RankDecider from './ranking/rankDecider';
 import Servicos from './servicos/servicos';
 import Sobre from './sobre/sobre';
-import Contato from './contato/contato';
 import { useState } from "react";
 import { auth } from "./services/firebase";
 import Contato from './contato/contato';
-import Sobre from './sobre/sobre';
-
 
 function App() {
   const [user, setUser] = useState();
@@ -34,7 +31,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/servicos" element={<Servicos />} />
-        <Route path="/contato" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/painel" element={<Painel />} />
         <Route path="/register" element={<Register />} />
@@ -47,7 +43,6 @@ function App() {
         <Route path="/rankDecider" element={<RankDecider />} />
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/sobre" element={<Sobre />} />
-        <Route path="/contato" element={<Contato />} />
       </Routes>
     </Router>
     

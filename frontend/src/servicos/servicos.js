@@ -8,10 +8,7 @@ import Navbar from '../navbar.js';
 function Servicos() {
     return (
         <div>
-<<<<<<< HEAD
             <Navbar/>
-=======
->>>>>>> de0c24f67e9bca1cc20736dc3277ad98fdd4ad10
             <section class="home">
                 <div class="home-content">
                     <br></br>
@@ -19,7 +16,7 @@ function Servicos() {
                     <br></br>
                     <br></br>
                     <br></br>
-<<<<<<< HEAD
+
                     <h1> Facilitando a Sustentabi<span>lidade em Sua Casa</span></h1>
                     <p>Em um mundo cada vez mais consciente da importância da preservação ambiental,
                         a reciclagem de materiais é uma ação fundamental para garantir um futuro sustentável.
@@ -44,7 +41,6 @@ function Servicos() {
                     <p>Entre em contato conosco e comece a reciclar hoje mesmo!</p>
                     <br></br>
                     <a href="#" class="btn">Sobre</a>
-=======
                     <br></br>
                     <br></br>
                     <br></br>
@@ -104,7 +100,6 @@ function Servicos() {
                         sustentáveis e colaborativas.</p>
                     <br></br>
                     <a href="#" class="btn">Contato</a>
->>>>>>> de0c24f67e9bca1cc20736dc3277ad98fdd4ad10
                 </div>
             </section>
         </div >
