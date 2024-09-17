@@ -17,6 +17,9 @@ import Sobre from './sobre/sobre';
 import Contato from './contato/contato';
 import { useState } from "react";
 import { auth } from "./services/firebase";
+import Contato from './contato/contato';
+import Sobre from './sobre/sobre';
+
 
 function App() {
   const [user, setUser] = useState();
@@ -30,6 +33,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/servicos" element={<Servicos />} />
+        <Route path="/contato" element={<Contato />} />
+        <Route path="/sobre" element={<Sobre />} />
         <Route path="/painel" element={<Painel />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
