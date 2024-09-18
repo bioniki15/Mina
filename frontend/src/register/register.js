@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from 'react';
+import { BrowserRouter } from "react-router-dom";
 import { auth, db } from "../services/firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -10,10 +11,17 @@ function Register() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [err, setError] = useState("");
+    const router = BrowserRouter();
 
     const handleRegister = async (e) => {
       e.preventDefault();
-      try {
+
+      if(password.length <= 6){
+        setError("senha deve conter 6 ou mais caracteres")
+      }
+      else{
+        try {
         await createUserWithEmailAndPassword(auth, email, password);
         const user = auth.currentUser;
         console.log(user);
@@ -25,15 +33,16 @@ function Register() {
             photo:""
           });
         }
-        console.log("User Registered Successfully!!");
+    
         toast.success("User Registered Successfully!!", {
           position: "top-center",
         });
       } catch (error) {
-        console.log(error.message);
+        setError(error);
         toast.error(error.message, {
           position: "bottom-center",
         });
+      } 
       }
     };
 
@@ -82,7 +91,7 @@ function Register() {
                     />
 
                     <div className="form__action">
-                        <p className='text-danger text-center'></p>
+                        <p className='text-danger text-center'>{err}</p>
                         <input
                             type="submit"
                             value="Cadastrar"
