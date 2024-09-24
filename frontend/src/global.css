@@ -73,10 +73,26 @@ nav a {
     border-bottom: 3px solid transparent;
 }
 
+nav svg {
+    transition: 0.3s ease;
+}
+
+nav .login {
+    position: absolute;
+    width: 1vh;
+    height: 1vh;
+    right: 5%;
+    top: 26%;
+}
+
 nav a:hover,
 nav a.active {
     color: #67ce69;
     border-bottom: 3px solid #67ce69;
+}
+
+nav a:hover svg {
+    fill: #67ce69;
 }
 
 @media(max-width:995px) {
@@ -582,7 +598,7 @@ label .users {
 
 .btn-contato:hover {
     border-radius: 16px;
-} 
+}
 
 /* CSS Sobre */
 .section-sobre {
@@ -707,28 +723,31 @@ label .users {
 
 /* Footer */
 
-footer{
+footer {
     position: absolute;
     left: 0;
     min-width: 100%;
     background-color: #4b9e3d;
     padding: 50px;
 }
-.container-footer{
-    
+
+.container-footer {
+
     padding: 0 4%;
     margin: auto;
 }
-.row-footer{
+
+.row-footer {
     display: flex;
     flex-wrap: wrap;
 }
 
-.footer-col{
+.footer-col {
     width: 25%;
     padding: 0 15px;
 }
-.footer-col h4{
+
+.footer-col h4 {
     font-size: 22px;
     color: white;
     margin-bottom: 20px;
@@ -736,13 +755,16 @@ footer{
     position: relative;
     text-transform: uppercase;
 }
-.footer-col ul{
+
+.footer-col ul {
     list-style: none;
 }
-.footer-col ul li{
+
+.footer-col ul li {
     margin: 10px 0;
 }
-.footer-col ul li a{
+
+.footer-col ul li a {
     font-size: 16px;
     text-transform: capitalize;
     color: white;
@@ -751,14 +773,17 @@ footer{
     display: block;
     transition: all 0.3s ease;
 }
-.footer-col ul li a:hover{
+
+.footer-col ul li a:hover {
     color: #cecdcd;
     padding-left: 10px;
 }
-.footer-col .medias-socias{
+
+.footer-col .medias-socias {
     margin-top: 30px;
 }
-.footer-col .medias-socias a{
+
+.footer-col .medias-socias a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -771,15 +796,17 @@ footer{
     border: 1px solid white;
     transition: all 0.5s ease;
 }
-.footer-col .medias-socias a i{
+
+.footer-col .medias-socias a i {
     font-size: 20px;
 }
 
-.footer-col .medias-socias a:hover{
+.footer-col .medias-socias a:hover {
     color: #4b9e3d;
     background-color: white;
 }
-.footer-col .form-sub input{
+
+.footer-col .form-sub input {
     width: 100%;
     padding: 10px;
     font-size: 15px;
@@ -788,13 +815,15 @@ footer{
     color: white;
     background-color: #4b9e3d;
 }
-.footer-col .form-sub input::placeholder{
+
+.footer-col .form-sub input::placeholder {
     color: white;
 }
-.footer-col .form-sub button{
+
+.footer-col .form-sub button {
     width: 100%;
     margin-top: 10px;
-    padding: 10px; 
+    padding: 10px;
     font-size: 17px;
     outline: none;
     border: none;
@@ -802,17 +831,167 @@ footer{
     color: #4b9e3d;
     border-radius: 3px;
     font-weight: bold;
-    background-color: white;        
+    background-color: white;
 }
+
 /* Responsivo */
 @media (max-width: 800px) {
-    .footer-col{
+    .footer-col {
         width: 50%;
         margin-bottom: 30px;
     }
 }
+
 @media (max-width:600px) {
-    .footer-col{
+    .footer-col {
         width: 100%;
     }
+}
+
+/* PAINEL */
+
+.painel_body {
+    background: rgb(244, 247, 254);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-top: 5%;
+}
+
+.colunas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.grafico {
+    height: 100%;
+}
+
+
+.colunas {
+    height: 100%;
+}
+
+.linha {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    height: 70%;
+}
+
+.mes {
+    align-self: flex-end;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    height: 80%;
+    background: #E9EDF7;
+}
+
+.tooltip {
+    position: absolute;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    box-shadow: rgba(112, 144, 176, 0.12) 0px 18px 40px 0px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.mes:hover {
+    transition: 0.5s ease;
+    cursor: pointer;
+    background: rgb(5, 205, 153);
+}
+
+.mes:hover .tooltip .tooltiptext {
+    visibility: visible;
+}   
+
+.painel_balanco,
+.painel_grafico {
+    font-family: "DM Sans", sans-serif;
+    padding: 20px;
+    background: #FFFFFF;
+    width: 80%;
+    border-radius: 20px;
+    height: auto;
+    margin: 20px;
+}
+
+.painel_grafico {
+    height: 100%;
+}
+
+.painel_balanco .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.painel_balanco .header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #67ce69;
+}
+
+.painel_balanco .header select {
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: rgb(5, 205, 153);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.painel_balanco .header select::after {
+    background-color: #7fbf6d;
+    border-radius: 0;
+    border: none;
+}
+
+.painel_balanco .balanco {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.painel_balanco .box {
+    width: 20%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(112, 144, 176, 0.12) 0px 18px 40px 0px;
+    margin: 20px;
+}
+
+.balanco .box h3 {
+    color: rgb(163, 208, 174);
+}
+
+.balanco .box p {
+    color: #000000;
 }
