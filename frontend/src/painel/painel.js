@@ -18,100 +18,51 @@ function Painel() {
                     <div className='colunas'>
                         <div className='linha'>
                             <p>Jan</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
-
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Fev</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Mar</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Abr</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Mai</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Jun</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Jul</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Ago</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Set</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Out</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Nov</p>
-                            <div className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                         <div className='linha'>
                             <p>Dez</p>
-                            <div title='R$150,00' className='mes'>
-                                <div class="tooltip">
-                                    <span class="tooltiptext">R$150,00</span>
-                                </div>
-                            </div>
+                            <p>R$250,00</p>
                         </div>
                     </div>
                 </div>
@@ -141,7 +92,7 @@ function Painel() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
