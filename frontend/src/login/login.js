@@ -1,29 +1,28 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../services/firebase";
 import {toast} from "react-toastify";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { set } from "firebase/database";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+   
   
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
         await signInWithEmailAndPassword(auth, email, password);
         console.log("User logged in Successfully");
-        window.location.href = "/home";
+        window.location.href = "/";
         toast.success("User logged in Successfully", {
           position: "top-center",
         });
       } catch (error) {
-        console.log(error.message);
-  
-        toast.error(error.message, {
-          position: "bottom-center",
-        });
+        window.alert("Usuario não encontrado!")
       }
     };
 

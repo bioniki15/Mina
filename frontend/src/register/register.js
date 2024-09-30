@@ -2,7 +2,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from 'react';
 import { auth, db } from "../services/firebase";
 import { setDoc, doc } from "firebase/firestore";
-import { toast } from "react-toastify";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -17,7 +16,7 @@ function Register() {
     e.preventDefault();
 
     if (userType == "") {
-      setError("usuário deve escolher uma opção!")
+      setError("O usuário deve escolher uma opção!")
     }
 
     else if (password.length <= 5) {
@@ -54,7 +53,7 @@ function Register() {
           window.location.href = "/login";
         }
 
-        alert("User Registered Successfully!!")
+        alert("Registrado com sucesso!")
       } catch (error) {
         setError(error);
       }
