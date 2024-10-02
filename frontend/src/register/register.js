@@ -16,7 +16,7 @@ function Register() {
     e.preventDefault();
 
     if (userType == "") {
-      setError("O usuário deve escolher uma opção!")
+      setError("O usuário deve escolher uma opção de perfil!")
     }
 
     else if (password.length <= 5) {
@@ -26,7 +26,6 @@ function Register() {
       try {
         await createUserWithEmailAndPassword(auth, email, password);
         const user = auth.currentUser;
-        console.log(user);
         if (user) {
           if (userType == "empresa") {
             await setDoc(doc(db, "Empresa", user.uid), {
@@ -52,8 +51,6 @@ function Register() {
 
           window.location.href = "/login";
         }
-
-        alert("Registrado com sucesso!")
       } catch (error) {
         setError(error);
       }
