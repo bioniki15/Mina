@@ -63,7 +63,7 @@ function Painel() {
                         <div className='linha'>
                             <p>Dez</p>
                             <p>R$250,00</p>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,11 +71,13 @@ function Painel() {
             <div className='painel_balanco'>
                 <div className='header'>
                     <h1>Balanço</h1>
-                    <select name='tipoBalanco' id='tipoBalanco'>
-                        <option value="anual">Anual</option>
-                        <option value="mensal">Mensal</option>
-                        <option value="semanal">Semanal</option>
-                    </select>
+                    <div className='custom-select'>
+                        <select name='tipoBalanco' id='tipoBalanco'>
+                            <option value="anual">Anual</option>
+                            <option value="mensal">Mensal</option>
+                            <option value="semanal">Semanal</option>
+                        </select>
+                    </div>
                 </div>
                 <div className='balanco'>
                     <div className='box'>

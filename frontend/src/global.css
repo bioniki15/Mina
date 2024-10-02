@@ -313,7 +313,7 @@ span {
     }
 }
 
-h1{
+h1 {
     font-size: 5rem;
     color: rgb(100, 100, 100);
 }
@@ -333,11 +333,11 @@ a {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) .5rem, white .5rem);
 }
 
-.form input{
+.form input {
     transition: 0.2s ease;
 }
 
-.form input:hover{
+.form input:hover {
     box-shadow: 0px 0px 5px var(--login-primary-color);
 }
 
@@ -492,7 +492,7 @@ label .users {
     font-weight: 1000;
 }
 
-.radio label{
+.radio label {
     transition: 0.2s ease;
 }
 
@@ -507,7 +507,7 @@ label .users {
     color: white;
 }
 
-.radio p{
+.radio p {
     transition: 0.2s ease;
 }
 
@@ -749,7 +749,7 @@ label .users {
     animation: cursor 0.6s infinite;
 }
 
-.sobreProjeto{
+.sobreProjeto {
     font-size: 6rem;
 }
 
@@ -911,7 +911,10 @@ footer {
 
 
 .colunas {
-    height: 100%;
+    height: 70%;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .linha {
@@ -962,7 +965,7 @@ footer {
 
 .mes:hover .tooltip .tooltiptext {
     visibility: visible;
-}   
+}
 
 .painel_balanco,
 .painel_grafico {
@@ -1002,11 +1005,15 @@ footer {
     background-color: transparent;
 }
 
-.painel_balanco .header select::after {
-    background-color: #7fbf6d;
-    border-radius: 0;
-    border: none;
+.custom-select {
+    position: relative;
+    display: inline-block;
 }
+
+.custom-select select {
+    display: none; /* Esconde o select original */
+}
+
 
 .painel_balanco .balanco {
     display: flex;
