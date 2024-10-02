@@ -63,7 +63,7 @@ function Painel() {
                         <div className='linha'>
                             <p>Dez</p>
                             <p>R$250,00</p>
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
