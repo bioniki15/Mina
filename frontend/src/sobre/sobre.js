@@ -7,6 +7,7 @@ function Sobre() {
     return (
 
         <section class="home">
+            <Navbar/>
             <div class="home-content">
                 <br></br>
                 <br></br>

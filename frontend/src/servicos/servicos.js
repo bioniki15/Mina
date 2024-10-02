@@ -46,7 +46,7 @@ function Servicos() {
                     <br></br>
                     <br></br>
                     <br></br>
-                    <h1>Sobre o Projeto <span>Mina de Aço</span></h1>
+                    <h1 className='sobreProjeto'>Sobre o Projeto <span>Mina de Aço</span></h1>
                     <br></br>
                     <br></br>
                     <br></br>
