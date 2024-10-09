@@ -11,6 +11,7 @@ function Navbar() {
                 <nav>
                     <a href="/">Home</a>
                     <a href="/servicos">Serviços</a>
+                    <a href="/mapa">Mapa</a>
                     <a href="/sobre">Sobre</a>
                     <a href="/contato">Contato</a>
                     <a href="/login" className='login' style={{border: 'none'}}>
